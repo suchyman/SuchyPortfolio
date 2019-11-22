@@ -224,7 +224,7 @@ $wp_customize->add_control( 'cd_start_text_text_mail', array(
 add_action("customize_register","sitepoint_customize_register");
 
 
-// Register Custom Post Type
+// Register Custom Post Type - experience
 function experience_cpt() {
 	$labels = array(
 	'name'                  => _x( 'experience', 'Post Type General Name', 'experience' ),
@@ -285,7 +285,7 @@ function experience_cpt() {
 
 		acf_add_local_field_group(array (
 			'key' => 'group_1',
-			'title' => 'My Group',
+			'title' => 'Szczegóły',
 			'fields' => array (
 				array (
 					'key' => 'stanowisko',
@@ -344,5 +344,141 @@ function experience_cpt() {
 		endif;
 		add_action( 'init', 'acf_add_local_field_group', 0 );
 
+///////////////////
+		// Register Custom Post Type - skills
+function skills_cpt() {
+	$labels = array(
+	'name'                  => _x( 'skills', 'Post Type General Name', 'skills' ),
+	'singular_name'         => _x( 'skills', 'Post Type Singular Name', 'skills' ),
+	'menu_name'             => __( 'Skills posts', 'skills' ),
+	'name_admin_bar'        => __( 'Add New skill', 'skills' ),
+	'archives'              => __( 'Item Archives', 'skills' ),
+	'parent_item_colon'     => __( 'Parent Item', 'skills' ),
+	'all_items'             => __( 'All Skills', 'skills' ),
+	'add_new_item'          => __( 'Add New skills', 'skills' ),
+	'add_new'               => __( 'Add new skills', 'skills' ),
+	'new_item'              => __( 'Not Found', 'skills' ),
+	'edit_item'             => __( 'Edit Item', 'skills' ),
+	'update_item'           => __( 'Update Item', 'skills' ),
+	'view_item'             => __( 'View Item', 'skills' ),
+	'search_items'          => __( 'Search Item', 'skills' ),
+	'not_found'             => __( 'Not Found', 'skills' ),
+	'not_found_in_trash'    => __( 'Not Found In Trash', 'skills' ),
+	'featured_image'        => __( 'Featured Image', 'skills' ),
+	'set_featured_image'    => __( 'Set Featured Image', 'skills' ),
+	'remove_featured_image' => __( 'Remove Featured Image', 'skills' ),
+	'use_featured_image'    => __( 'Use As Featured Image', 'skills' ),
+	'insert_into_item'      => __( 'Post Types', 'skills' ),
+	'uploaded_to_this_item' => __( 'Uploaded To This Item', 'skills' ),
+	'items_list'            => __( 'Items List', 'skills' ),
+	'items_list_navigation' => __( 'Items List Navigation', 'skills' ),
+	'filter_items_list'     => __( 'Filter Items List', 'skills' ),
+	);
+	$args = array(
+	'label'                 => __( 'Post Type', 'skills' ),
+	'description'           => __( 'skills_description', 'skills' ),
+	'labels'                => $labels,
+	'supports'              => array('title' , 'editor' , 'content' , 'custom_fields'),
+	'taxonomies'            => array( ''),
+	'hierarchical'          => false,
+	'public'                => true,
+	'show_ui'               => true,
+	'show_in_menu'          => true,
+	'menu_position'         => 5,
+	'show_in_admin_bar'     => true,
+	'show_in_nav_menus'     => true,
+	'can_export'            => true,
+	'has_archive'           => true,
+	'exclude_from_search'   => false,
+	'publicly_queryable'    => true,
+	'capability_type'       => 'page',
+	'menu_icon' => 'dashicons-awards',
+	);
+	register_post_type( 'skills_cpt', $args );
+	}
+	add_action( 'init', 'skills_cpt', 0 );
+//////////////
 
-		
+// if( function_exists('acf_add_local2_field_group') ):
+
+// 	acf_add_local2_field_group(array (
+// 		'key' => 'group_2',
+// 		'title' => 'Skills icons',
+// 		'fields' => array (
+// 			array (
+// 				'key' => 'checkboxes',
+// 				'label' => 'Icons',
+// 				'name' => 'icon',
+// 				'type' => 'text',
+// 				'prefix' => '',
+// 				'instructions' => '',
+// 				'required' => 0,
+// 				'conditional_logic' => 0,
+// 				'wrapper' => array (
+// 					'width' => '',
+// 					'class' => '',
+// 					'id' => '',
+// 				),
+// 				'default_value' => '',
+// 				'placeholder' => '',
+// 				'prepend' => '',
+// 				'append' => '',
+// 				'maxlength' => '',
+// 				'readonly' => 0,
+// 				'disabled' => 0,
+// 			)
+// 		),
+// 		'location' => array (
+// 			array (
+// 				array (
+// 					'param' => 'post_type',
+// 					'operator' => '==',
+// 					'value' => 'skills',
+// 				),
+// 			),
+// 		),
+// 		'menu_order' => 0,
+// 		'position' => 'normal',
+// 		'style' => 'default',
+// 		'label_placement' => 'top',
+// 		'instruction_placement' => 'label',
+// 		'hide_on_screen' => '',
+// 	));
+	
+// 	endif;
+// 	add_action( 'init', 'acf_add_local2_field_group', 0 );
+
+
+function my_acf_add_local2_field_groups() {
+	
+	acf_add_local_field_group(array(
+		'key' => 'group_2',
+		'title' => 'My Group',
+		'fields' => array (
+			array (
+				'key' => 'field_2',
+				'label' => 'Sub Title',
+				'name' => 'sub_title',
+				'type' => 'checkbox',
+				'choices' => array(
+					'category' => 'Show category',
+					'tags' => '<span class="dashicons dashicons-align-left"></span>',
+					'author' => 'Show author',
+					'author_image' =>
+					'Show autor image (only if show author)'),
+				),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'skills_cpt',
+				),
+			),
+		),
+	));
+	
+}
+
+add_action('acf/init', 'my_acf_add_local2_field_groups');
