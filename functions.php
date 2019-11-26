@@ -470,11 +470,11 @@ function my_acf_add_local2_field_groups() {
 	
 	acf_add_local_field_group(array(
 		'key' => 'group_2',
-		'title' => 'My Group',
+		'title' => 'Skills icons',
 		'fields' => array (
 			array (
 				'key' => 'field_2',
-				'label' => 'Sub Title',
+				'label' => 'Choice skills',
 				'name' => 'sub_title',
 				'type' => 'checkbox',
 				'choices' => array(
@@ -487,7 +487,7 @@ function my_acf_add_local2_field_groups() {
 					'fa fa-codepen' =>'<i class="fa fa-codepen"></i>',
 					'fa fa-digg' =>'<i class="fa fa-digg"></i>',
 					'fa fa-dropbox' =>'<i class="fa fa-dropbox"></i>',
-					'fa fa-drupa' =>'<i class="fa fa-drupal"></i>',)
+					'fa fa-drupal' =>'<i class="fa fa-drupal"></i>',)
 				),
 		),
 		'location' => array (
