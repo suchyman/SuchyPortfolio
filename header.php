@@ -32,6 +32,8 @@
 
   <!-- Custom styles for this template -->
   <link href="<?php echo get_template_directory_uri(); ?>/css/resume.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
 
 </head>
 <body>	

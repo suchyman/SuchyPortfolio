@@ -448,6 +448,23 @@ function skills_cpt() {
 // 	endif;
 // 	add_action( 'init', 'acf_add_local2_field_group', 0 );
 
+add_action( 'wp_enqueue_scripts', 'custom_load_font_awesome' );
+/**
+ * Enqueue Font Awesome.
+ */
+function custom_load_font_awesome() {
+
+    wp_enqueue_style( 'font-awesome-free', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css' );
+
+}
+function FontAwesome_icons() {
+    echo '<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"  rel="stylesheet">';
+}
+
+add_action('admin_head', 'FontAwesome_icons');
+add_action('wp_head', 'FontAwesome_icons');
+
+
 
 function my_acf_add_local2_field_groups() {
 	
@@ -461,11 +478,16 @@ function my_acf_add_local2_field_groups() {
 				'name' => 'sub_title',
 				'type' => 'checkbox',
 				'choices' => array(
-					'category' => 'Show category',
-					'tags' => '<span class="dashicons dashicons-align-left"></span>',
-					'author' => 'Show author',
-					'author_image' =>
-					'Show autor image (only if show author)'),
+					'fa fa-adn' => '<i class="fa fa-adn"></i>',
+					'fa fa-apple' => '<i class="fa fa-apple"></i>',
+					'fa fa-500px' => '<i class="fa fa-500px"></i>',
+					'fa fa-behance' =>'<i class="fa fa-behance"></i>',
+					'fa fa-bluetooth' =>'<i class="fa fa-bluetooth"></i>',
+					'fa fa-500px' =>'<i class="fa fa-500px"></i>',
+					'fa fa-codepen' =>'<i class="fa fa-codepen"></i>',
+					'fa fa-digg' =>'<i class="fa fa-digg"></i>',
+					'fa fa-dropbox' =>'<i class="fa fa-dropbox"></i>',
+					'fa fa-drupa' =>'<i class="fa fa-drupal"></i>',)
 				),
 		),
 		'location' => array (

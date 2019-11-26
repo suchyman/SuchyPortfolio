@@ -25,7 +25,7 @@ get_header();
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Clarence Taylor</span>
+      <span class="d-block d-lg-none">Portfolio - Jacek Ochal</span>
       <span class="d-none d-lg-block">
         <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/ken.png" alt="">
       </span>
@@ -116,17 +116,18 @@ require_once('page-exp.php')
       </div>
         
       </section>
-
+      <?php
+require_once('page-skills.php')
+?>
     <hr class="m-0">
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
       <div class="w-100">
         <h2 class="mb-5">Skillsy</h2>
-
-        <div class="subheading mb-3">Nie mogę powiedzieć że coś znam na 100%. Ale mogę wstawić fajne ikonki do technologii w których coś robiłem:</div>
+         <div class="subheading mb-3">Nie mogę powiedzieć że coś znam na 100%. Ale mogę wstawić fajne ikonki do technologii w których coś robiłem:</div>
         <ul class="list-inline dev-icons">
-        <li class="list-inline-item">
-        <i class="fab fa-php"></i>
+          <li class="list-inline-item">
+          <i class="fab fa-php"></i>
           </li>
           <li class="list-inline-item">
             <i class="fab fa-html5"></i>
